@@ -15,3 +15,7 @@ resource "aws_eip" "ip" {
 	instance = "${aws_instance.example.id}"
         depends_on = ["aws_instance.example"]
 }
+
+output "Public IP Address" {
+	value = "${aws_eip.ip.public_ip}"
+}
